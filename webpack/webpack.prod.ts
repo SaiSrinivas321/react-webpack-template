@@ -1,11 +1,13 @@
-const webp = require("webpack");
-
+const webp = require('webpack')
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = {
-  mode: "production",
-  devtool: "source-map",
+  mode: 'production',
+  devtool: 'source-map',
   plugins: [
     new webp.DefinePlugin({
-      "process.env.name": JSON.stringify("Production"),
+      'process.env.name': JSON.stringify('Production'),
     }),
+    new BundleAnalyzerPlugin(),
   ],
-};
+}
